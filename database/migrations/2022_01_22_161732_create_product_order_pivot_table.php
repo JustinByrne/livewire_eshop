@@ -18,8 +18,6 @@ class CreateProductOrderPivotTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->integer('price');
             $table->integer('quantity');
-
-            $table->primary(['product_id', 'order_id']);
         });
     }
 
