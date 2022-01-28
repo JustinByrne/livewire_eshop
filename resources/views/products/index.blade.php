@@ -12,11 +12,11 @@
                     
                     <div class="grid lg:grid-cols-3 xl:grid-cols-4">
                         <div>
-                            <div class="pb-4">
+                            <div class="pb-4 border-b" x-data="{ open: false }">
                                 <fieldset>
                                     <legend class="w-full px-2">
                                         <!-- Expand/collapse section button -->
-                                        <button type="button" class="w-full p-2 flex items-center justify-between text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false">
+                                        <button type="button" class="w-full p-2 flex items-center justify-between text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false" x-on:click="open = !open">
                                             <span class="text-sm font-medium text-gray-900">
                                                 Category
                                             </span>
@@ -28,17 +28,17 @@
                             
                                                 Open: "-rotate-180", Closed: "rotate-0"
                                                 -->
-                                                <svg class="rotate-0 h-5 w-5 transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <svg class="rotate-0 h-5 w-5 transform transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" x-bind:class="{ '-rotate-180' : open, 'rotate-0' : ! open }">
                                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                                 </svg>
                                             </span>
                                         </button>
                                     </legend>
-                                    <div class="pt-4 pb-2 px-4" id="filter-section-0">
+                                    <div class="pt-4 pb-2 px-4" id="filter-section-0" x-bind:class="{ 'hidden' : ! open }">
                                         <div class="space-y-6">
                                             @foreach ($categories as $category)
                                                 <div class="flex items-center">
-                                                    <input id="color-0-mobile" name="color[]" value="white" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                                    <input id="color-0-mobile" name="category[]" value="white" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
                                                     <label for="color-0-mobile" class="ml-3 text-sm text-gray-500">
                                                         {{ $category->name }}
                                                     </label>
