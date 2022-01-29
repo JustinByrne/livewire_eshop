@@ -18,8 +18,8 @@
                     <div class="space-y-6">
                         @foreach ($categories as $category)
                             <div class="flex items-center">
-                                <input id="color-0-mobile" name="category[]" value="white" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
-                                <label for="color-0-mobile" class="ml-3 text-sm text-gray-500">
+                                <input id="category-{{ $category->id }}" wire:model="categories_filter" value="{{ $category->id }}" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                <label for="category-{{ $category->id }}" class="ml-3 text-sm text-gray-500">
                                     {{ $category->name }}
                                 </label>
                             </div>
