@@ -15,20 +15,12 @@
                             <div class="pb-4 border-b" x-data="{ open: false }">
                                 <fieldset>
                                     <legend class="w-full px-2">
-                                        <!-- Expand/collapse section button -->
                                         <button type="button" class="w-full p-2 flex items-center justify-between text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false" x-on:click="open = !open">
                                             <span class="text-sm font-medium text-gray-900">
                                                 Category
                                             </span>
                                             <span class="ml-6 h-7 flex items-center">
-                                                <!--
-                                                Expand/collapse icon, toggle classes based on section open state.
-                            
-                                                Heroicon name: solid/chevron-down
-                            
-                                                Open: "-rotate-180", Closed: "rotate-0"
-                                                -->
-                                                <svg class="rotate-0 h-5 w-5 transform transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" x-bind:class="{ '-rotate-180' : open, 'rotate-0' : ! open }">
+                                                <svg class="h-5 w-5 transform transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" x-bind:class="{ '-rotate-180' : open, 'rotate-0' : ! open }">
                                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                                 </svg>
                                             </span>
