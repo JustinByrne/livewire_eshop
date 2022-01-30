@@ -1,6 +1,6 @@
 <div class="grid lg:grid-cols-3 xl:grid-cols-4">
-    <div>
-        <div class="pb-4 border-b" x-data="{ open: false }">
+    <div class="sm:pb-3 lg:pb-0">
+        <div class="pb-4 lg:border-b" x-data="{ open: false }">
             <fieldset>
                 <legend class="w-full px-2">
                     <button type="button" class="w-full p-2 flex items-center justify-between text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false" x-on:click="open = !open">
