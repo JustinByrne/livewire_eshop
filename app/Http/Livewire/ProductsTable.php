@@ -9,6 +9,7 @@ use App\Models\Category;
 class ProductsTable extends Component
 {
     public array $categories_filter = [];
+    public $pricing;
     
     public function render()
     {
@@ -19,6 +20,13 @@ class ProductsTable extends Component
                 return $query->whereHas('categories', function ($query) {
                     $query->whereIn('id', $this->categories_filter);
                 });
+            })
+            ->when($this->pricing, function ($query) {
+                $prices = array_map(function($price) {
+                    return $price * 100;
+                }, explode(',', $this->pricing));
+                
+                return $query->whereBetween('price', $prices);
             })
             ->get();
         
