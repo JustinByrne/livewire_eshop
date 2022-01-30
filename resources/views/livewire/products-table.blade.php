@@ -14,7 +14,7 @@
                         </span>
                     </button>
                 </legend>
-                <div class="pt-4 pb-2 px-4" id="filter-section-0" x-bind:class="{ 'hidden' : ! open }">
+                <div class="pt-4 pb-2 px-4" id="filter-section-0" x-bind:class="{ 'hidden' : ! open }" x-cloak>
                     <div class="space-y-6">
                         @foreach ($categories as $category)
                             <div class="flex items-center">
