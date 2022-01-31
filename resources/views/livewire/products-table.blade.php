@@ -45,13 +45,13 @@
                 <div class="pt-4 pb-2 px-4" id="filter-section-0" x-bind:class="{ 'hidden' : ! open }" x-cloak>
                     <div class="space-y-6">
                         <div class="flex items-center">
-                            <input id="price-1" name="pricing" wire:model="pricing" value="0,50" type="radio" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500 rounded-full">
+                            <input id="price-1" name="pricing" wire:model="pricing" value="0,50" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500 rounded-full">
                             <label for="price-1" class="ml-3 text-sm text-gray-500">
                                 £0 - £50
                             </label>
                         </div>
                         <div class="flex items-center">
-                            <input id="price-2" name="pricing" wire:model="pricing" value="50,100" type="radio" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500 rounded-full">
+                            <input id="price-2" name="pricing" wire:model="pricing" value="50,100" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500 rounded-full">
                             <label for="price-2" class="ml-3 text-sm text-gray-500">
                                 £50 - £100
                             </label>
