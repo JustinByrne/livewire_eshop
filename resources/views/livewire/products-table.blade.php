@@ -56,6 +56,12 @@
                                 £50 - £100
                             </label>
                         </div>
+                        <div class="flex items-center">
+                            <input id="price-3" name="pricing" wire:model="pricing" value="150,200" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500 rounded-full">
+                            <label for="price-3" class="ml-3 text-sm text-gray-500">
+                                £150 - £200
+                            </label>
+                        </div>
                     </div>
                 </div>
             </fieldset>
