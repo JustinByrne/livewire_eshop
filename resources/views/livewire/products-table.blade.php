@@ -20,7 +20,7 @@
                             <div class="flex items-center">
                                 <input id="category-{{ $category->id }}" wire:model="categories_filter" value="{{ $category->id }}" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
                                 <label for="category-{{ $category->id }}" class="ml-3 text-sm text-gray-500">
-                                    {{ $category->name }}
+                                    {{ $category->name }} ({{ $category->products_count }})
                                 </label>
                             </div>
                         @endforeach

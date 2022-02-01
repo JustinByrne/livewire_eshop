@@ -13,7 +13,8 @@ class ProductsTable extends Component
     
     public function render()
     {
-        $categories = Category::all();
+        $categories = Category::withCount('products')
+            ->get();
         
         $products = Product::orderBy('name')
             ->when(! empty($this->categories_filter), function ($query) {
