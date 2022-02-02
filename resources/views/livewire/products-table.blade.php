@@ -1,5 +1,5 @@
 <div class="grid lg:grid-cols-3 xl:grid-cols-4">
-    <div class="sm:pb-3 lg:pb-0">
+    <div class=" lg:hidden sm:pb-3 lg:pb-0">
         <div class="py-2 lg:border-b" x-data="{ open: false }">
             <fieldset>
                 <legend class="w-full px-2">
@@ -43,6 +43,64 @@
                     </button>
                 </legend>
                 <div class="pt-4 pb-2 px-4" id="filter-section-0" x-bind:class="{ 'hidden' : ! open }" x-cloak>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <input id="price-1" name="pricing" wire:model="pricing" value="0,50" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500 rounded-full">
+                            <label for="price-1" class="ml-3 text-sm text-gray-500">
+                                £0 - £50
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="price-2" name="pricing" wire:model="pricing" value="50,100" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500 rounded-full">
+                            <label for="price-2" class="ml-3 text-sm text-gray-500">
+                                £50 - £100
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="price-3" name="pricing" wire:model="pricing" value="150,200" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500 rounded-full">
+                            <label for="price-3" class="ml-3 text-sm text-gray-500">
+                                £150 - £200
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="hidden lg:block sm:pb-3 lg:pb-0">
+        <div class="py-2 lg:border-b">
+            <fieldset>
+                <legend class="w-full px-2">
+                    <div class="w-full p-2 flex items-center justify-between text-gray-400 hover:text-gray-500">
+                        <span class="text-sm font-medium text-gray-900">
+                            Category
+                        </span>
+                    </div>
+                </legend>
+                <div class="pt-4 pb-2 px-4" id="filter-section-0">
+                    <div class="space-y-6">
+                        @foreach ($categories as $category)
+                            <div class="flex items-center">
+                                <input id="category-{{ $category->id }}" wire:model="categories_filter" value="{{ $category->id }}" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                <label for="category-{{ $category->id }}" class="ml-3 text-sm text-gray-500">
+                                    {{ $category->name }} ({{ $category->products_count }})
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="py-2 lg:border-b">
+            <fieldset>
+                <legend class="w-full px-2">
+                    <div class="w-full p-2 flex items-center justify-between text-gray-400 hover:text-gray-500">
+                        <span class="text-sm font-medium text-gray-900">
+                            Price
+                        </span>
+                    </div>
+                </legend>
+                <div class="pt-4 pb-2 px-4" id="filter-section-0">
                     <div class="space-y-6">
                         <div class="flex items-center">
                             <input id="price-1" name="pricing" wire:model="pricing" value="0,50" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500 rounded-full">
